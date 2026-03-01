@@ -2,6 +2,7 @@
 
 namespace App\Actions\Fortify;
 
+use App\Actions\Users\GenerateUsernameAction;
 use App\Concerns\PasswordValidationRules;
 use App\Concerns\ProfileValidationRules;
 use App\Models\User;
@@ -24,8 +25,11 @@ class CreateNewUser implements CreatesNewUsers
             'password' => $this->passwordRules(),
         ])->validate();
 
+        $username = (new GenerateUsernameAction)->execute(name: $input['name']);
+
         return User::create([
             'name' => $input['name'],
+            'username' => $username,
             'email' => $input['email'],
             'password' => $input['password'],
         ]);

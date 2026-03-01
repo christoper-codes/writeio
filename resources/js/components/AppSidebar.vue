@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Link } from '@inertiajs/vue3';
-import { BookOpen, Folder, LayoutGrid } from 'lucide-vue-next';
+import { Link, usePage } from '@inertiajs/vue3';
+import { BookOpen, ExternalLink, Hash, LayoutGrid, PenSquare } from 'lucide-vue-next';
 import NavFooter from '@/components/NavFooter.vue';
 import NavMain from '@/components/NavMain.vue';
 import NavUser from '@/components/NavUser.vue';
@@ -17,26 +17,41 @@ import { type NavItem } from '@/types';
 import AppLogo from './AppLogo.vue';
 import { dashboard } from '@/routes';
 
+const page = usePage();
+const user = page.props.auth.user as { username?: string } | undefined;
+
 const mainNavItems: NavItem[] = [
     {
         title: 'Dashboard',
         href: dashboard(),
         icon: LayoutGrid,
     },
-];
-
-const footerNavItems: NavItem[] = [
     {
-        title: 'Github Repo',
-        href: 'https://github.com/laravel/vue-starter-kit',
-        icon: Folder,
-    },
-    {
-        title: 'Documentation',
-        href: 'https://laravel.com/docs/starter-kits#vue',
+        title: 'My Blogs',
+        href: '/blogs',
         icon: BookOpen,
     },
+    {
+        title: 'New Blog',
+        href: '/blogs/create',
+        icon: PenSquare,
+    },
+    {
+        title: 'Topics',
+        href: '/topics',
+        icon: Hash,
+    },
 ];
+
+const footerNavItems: NavItem[] = user?.username
+    ? [
+          {
+              title: 'My public page',
+              href: `/u/${user.username}`,
+              icon: ExternalLink,
+          },
+      ]
+    : [];
 </script>
 
 <template>
