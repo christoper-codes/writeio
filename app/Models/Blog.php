@@ -23,6 +23,8 @@ class Blog extends Model
         'published_at',
     ];
 
+    protected $appends = ['cover_image_url'];
+
     protected function casts(): array
     {
         return [

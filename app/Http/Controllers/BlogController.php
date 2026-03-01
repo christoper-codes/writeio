@@ -66,9 +66,7 @@ class BlogController extends Controller
         $blog->load('topics');
 
         return Inertia::render('blogs/Edit', [
-            'blog' => array_merge($blog->toArray(), [
-                'cover_image_url' => $blog->cover_image_url,
-            ]),
+            'blog' => $blog,
             'topics' => $topics,
         ]);
     }

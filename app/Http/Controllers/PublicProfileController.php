@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Blog;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -29,10 +28,7 @@ class PublicProfileController extends Controller
             ->with('topics')
             ->latest('published_at')
             ->limit(6)
-            ->get()
-            ->map(fn (Blog $blog) => array_merge($blog->toArray(), [
-                'cover_image_url' => $blog->cover_image_url,
-            ]));
+            ->get();
 
         return Inertia::render('profile/Show', [
             'profile_user' => [
@@ -62,10 +58,7 @@ class PublicProfileController extends Controller
             ->where('id', '!=', $blog->id)
             ->latest('published_at')
             ->limit(3)
-            ->get()
-            ->map(fn (Blog $b) => array_merge($b->toArray(), [
-                'cover_image_url' => $b->cover_image_url,
-            ]));
+            ->get();
 
         return Inertia::render('profile/BlogShow', [
             'profile_user' => [
@@ -74,9 +67,7 @@ class PublicProfileController extends Controller
                 'username' => $user->username,
                 'bio' => $user->bio,
             ],
-            'blog' => array_merge($blog->toArray(), [
-                'cover_image_url' => $blog->cover_image_url,
-            ]),
+            'blog' => $blog,
             'other_blogs' => $other_blogs,
         ]);
     }
