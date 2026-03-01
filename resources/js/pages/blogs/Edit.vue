@@ -105,7 +105,6 @@ function submit(status: 'draft' | 'published') {
                         <Label>Content</Label>
                         <BlogEditor
                             v-model="form.content"
-                            :blog-id="blog.id"
                             placeholder="Start writing your blog post..."
                         />
                         <InputError :message="form.errors.content" />

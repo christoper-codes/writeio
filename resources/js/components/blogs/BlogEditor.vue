@@ -4,7 +4,6 @@ import { onMounted, ref, watch } from 'vue';
 
 const props = defineProps<{
     modelValue: string;
-    blogId?: number;
     placeholder?: string;
 }>();
 
@@ -62,7 +61,7 @@ function triggerImageUpload() {
 async function handleImageUpload(event: Event) {
     const target = event.target as HTMLInputElement;
     const file = target.files?.[0];
-    if (!file || !props.blogId) return;
+    if (!file) return;
 
     is_uploading_image.value = true;
 
@@ -70,22 +69,32 @@ async function handleImageUpload(event: Event) {
     form_data.append('image', file);
 
     try {
-        const response = await fetch(`/blogs/${props.blogId}/upload-image`, {
+        const response = await fetch('/media/upload', {
             method: 'POST',
             body: form_data,
             headers: {
                 'X-XSRF-TOKEN': getCsrfToken(),
+                Accept: 'application/json',
             },
         });
+
+        if (!response.ok) throw new Error(`Upload failed: ${response.status}`);
+
         const data = await response.json();
         if (data.url) {
-            execCmd('insertHTML', `<img src="${data.url}" alt="Blog image" class="blog-image" />`);
+            editorRef.value?.focus();
+            document.execCommand(
+                'insertHTML',
+                false,
+                `<img src="${data.url}" alt="Blog image" class="blog-image" /><p><br></p>`,
+            );
+            onInput();
         }
-    } catch {
-        // silently handle
+    } catch (err) {
+        console.error('Image upload error:', err);
     } finally {
         is_uploading_image.value = false;
-        if (target) target.value = '';
+        target.value = '';
     }
 }
 

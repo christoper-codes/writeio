@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\MediaController;
 use App\Http\Controllers\PublicProfileController;
 use App\Http\Controllers\TopicController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('blogs/{blog}', [BlogController::class, 'destroy'])->name('blogs.destroy');
     Route::patch('blogs/{blog}/toggle-publish', [BlogController::class, 'togglePublish'])->name('blogs.toggle-publish');
     Route::post('blogs/{blog}/upload-image', [BlogController::class, 'uploadImage'])->name('blogs.upload-image');
+
+    // Media
+    Route::post('media/upload', [MediaController::class, 'upload'])->name('media.upload');
 
     // Topics
     Route::get('topics', [TopicController::class, 'index'])->name('topics.index');
