@@ -104,8 +104,24 @@ function getCsrfToken(): string {
 }
 
 function insertLink() {
-    const url = prompt('Enter URL:');
-    if (url) execCmd('createLink', url);
+    let url = prompt('Enter URL:');
+    if (!url) return;
+
+    // Ensure absolute URL
+    if (!/^https?:\/\//i.test(url)) {
+        url = 'https://' + url;
+    }
+
+    execCmd('createLink', url);
+
+    // execCommand doesn't support target — find the inserted anchor and patch it
+    const anchors = editorRef.value?.querySelectorAll(`a[href="${url}"]`);
+    anchors?.forEach((anchor: Element) => {
+        anchor.setAttribute('target', '_blank');
+        anchor.setAttribute('rel', 'noopener noreferrer');
+    });
+
+    onInput();
 }
 
 const toolbar_groups = [
