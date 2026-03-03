@@ -34,13 +34,13 @@ const initials = props.profile_user.name
             <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
                 <Link href="/">
                    <div class="flex items-center gap-2">
-                    <div class="flex items-center justify-center">
-                        <AppLogoIcon class="size-8" />
+                        <div class="flex items-center justify-center">
+                            <AppLogoIcon class="size-6" />
+                        </div>
+                        <span class="text-sm font-medium tracking-[0.15em] text-white/90">
+                            WRITE.io
+                        </span>
                     </div>
-                    <span class="text-sm font-medium tracking-[0.15em] text-white/90">
-                        WRITE.io
-                    </span>
-                </div>
                 </Link>
                 <div class="flex items-center gap-3">
                     <Link

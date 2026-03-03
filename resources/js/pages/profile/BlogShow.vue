@@ -5,6 +5,7 @@ import { computed } from 'vue';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import type { Blog, PublicUser } from '@/types';
+import AppLogoIcon from '@/components/AppLogoIcon.vue';
 
 const props = defineProps<{
     profile_user: PublicUser;
@@ -43,8 +44,15 @@ const initials = props.profile_user.name
                         Back
                     </Link>
                 </Button>
-                <Link href="/" class="text-sm font-bold tracking-tight text-foreground">
-                    Escribe<span class="text-primary">.</span>io
+                <Link href="/">
+                   <div class="flex items-center gap-2">
+                        <div class="flex items-center justify-center">
+                            <AppLogoIcon class="size-6" />
+                        </div>
+                        <span class="text-sm font-medium tracking-[0.15em] text-white/90">
+                            WRITE.io
+                        </span>
+                    </div>
                 </Link>
             </div>
         </header>
