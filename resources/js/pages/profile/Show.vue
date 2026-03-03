@@ -29,7 +29,7 @@ const initials = props.profile_user.name
 
     <div class="min-h-screen bg-background text-foreground">
         <!-- Navbar -->
-        <header class="border-b border-border bg-background/80 backdrop-blur-md">
+        <header class="border-b border-border bg-background/80 backdrop-blur-md fixed top-0 left-0 w-full z-10">
             <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
                 <Link href="/" class="text-lg font-bold tracking-tight text-foreground">
                     Escribe<span class="text-primary">.</span>io
@@ -45,7 +45,7 @@ const initials = props.profile_user.name
             </div>
         </header>
 
-        <main class="mx-auto max-w-5xl px-6 py-12">
+        <main class="mx-auto max-w-5xl px-6 py-12 mt-20">
             <!-- Profile header -->
             <section class="mb-14 flex flex-col items-center gap-5 text-center">
                 <!-- Avatar -->
