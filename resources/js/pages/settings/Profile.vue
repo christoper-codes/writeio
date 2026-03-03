@@ -5,6 +5,7 @@ import Heading from '@/components/Heading.vue';
 import InputError from '@/components/InputError.vue';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import AppLayout from '@/layouts/AppLayout.vue';
 import SettingsLayout from '@/layouts/settings/Layout.vue';
@@ -62,6 +63,34 @@ const user = page.props.auth.user;
                             placeholder="Full name"
                         />
                         <InputError class="mt-2" :message="errors.name" />
+                    </div>
+
+                    <div class="grid gap-2">
+                        <Label for="username">Username</Label>
+                        <Input
+                            id="username"
+                            class="mt-1 block w-full"
+                            name="username"
+                            :default-value="user.username"
+                            required
+                            autocomplete="username"
+                            placeholder="Username"
+                        />
+                        <InputError class="mt-2" :message="errors.username" />
+                    </div>
+
+                    <div class="grid gap-2">
+                        <Label for="bio">Bio</Label>
+                        <Textarea
+                            id="bio"
+                            class="mt-1 block w-full"
+                            name="bio"
+                            :default-value="user.bio"
+                            required
+                            autocomplete="bio"
+                            placeholder="Bio"
+                        />
+                        <InputError class="mt-2" :message="errors.bio" />
                     </div>
 
                     <div class="grid gap-2">
