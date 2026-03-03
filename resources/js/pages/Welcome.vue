@@ -16,7 +16,7 @@ withDefaults(
 <template>
     <Head title="Escribe — Write without limits" />
 
-    <div class="relative flex min-h-screen flex-col bg-[#060608] h-screen lg:overflow-hidden">
+    <div class="relative flex min-h-screen flex-col bg-[#060608] lg:h-screen lg:overflow-hidden">
 
         <!-- Ambient glow -->
         <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
@@ -27,7 +27,7 @@ withDefaults(
         </div>
 
         <!-- Nav -->
-        <header class="relative z-10 flex items-center justify-between px-8 py-7 md:px-14">
+        <header class="relative z-10 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between px-8 py-7 md:px-14">
             <div class="flex items-center gap-2">
                  <div class="flex items-center justify-center">
                     <AppLogoIcon class="size-8" />
@@ -50,7 +50,7 @@ withDefaults(
                 <template v-else>
                     <Link
                         :href="login()"
-                        class="px-4 py-2 text-xs font-medium tracking-wide text-white/50 transition-colors duration-200 hover:text-white/80"
+                        class="px-4 py-2 border text-xs font-medium tracking-wide text-white/50 transition-colors duration-200 hover:text-white/80"
                     >
                         Iniciar sesión
                     </Link>
