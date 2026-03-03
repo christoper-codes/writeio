@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Escribe.io** — SaaS platform for creating personal blogs. Built with Laravel 12 + Vue 3 + Inertia.js + Tailwind CSS 4 + TypeScript (VILT stack).
+**Write.io** — SaaS platform for creating personal blogs. Built with Laravel 12 + Vue 3 + Inertia.js + Tailwind CSS 4 + TypeScript (VILT stack).
 
 Each user gets their own space: a personal landing page that showcases their blogs by topic, plus full blog management (create, edit, delete). The rich editor supports images, highlighted quotes, paragraph breaks, horizontal rules, and more.
 

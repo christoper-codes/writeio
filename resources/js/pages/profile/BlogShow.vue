@@ -130,7 +130,7 @@ const initials = props.profile_user.name
         <footer class="mt-10 border-t border-border py-8 text-center text-sm text-muted-foreground">
             <p>
                 Powered by
-                <Link href="/" class="font-medium text-foreground hover:underline">Escribe.io</Link>
+                <Link href="/" class="font-medium text-foreground hover:underline">Write.io</Link>
                 · Write your story
             </p>
         </footer>

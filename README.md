@@ -1,4 +1,4 @@
-# Escribe.io
+# Write.io
 
 A SaaS platform for creating and sharing personal blogs. Each user gets their own space: a public landing page showcasing their blogs organized by topic, plus a full-featured editor to write and publish content.
 

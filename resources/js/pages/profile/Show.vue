@@ -4,6 +4,7 @@ import { BookOpen, Calendar, ChevronRight, Hash, User } from 'lucide-vue-next';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import type { Blog, PublicUser, Topic } from '@/types';
+import AppLogoIcon from '@/components/AppLogoIcon.vue';
 
 const props = defineProps<{
     profile_user: PublicUser;
@@ -25,22 +26,29 @@ const initials = props.profile_user.name
 </script>
 
 <template>
-    <Head :title="`${profile_user.name} – Escribe.io`" />
+    <Head :title="`${profile_user.name} – Write.io`" />
 
     <div class="min-h-screen bg-background text-foreground">
         <!-- Navbar -->
         <header class="border-b border-border bg-background/80 backdrop-blur-md fixed top-0 left-0 w-full z-10">
             <div class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-                <Link href="/" class="text-lg font-bold tracking-tight text-foreground">
-                    Escribe<span class="text-primary">.</span>io
+                <Link href="/">
+                   <div class="flex items-center gap-2">
+                    <div class="flex items-center justify-center">
+                        <AppLogoIcon class="size-8" />
+                    </div>
+                    <span class="text-sm font-medium tracking-[0.15em] text-white/90">
+                        WRITE.io
+                    </span>
+                </div>
                 </Link>
                 <div class="flex items-center gap-3">
-                    <Button as-child variant="ghost" size="sm">
-                        <Link href="/login">Sign in</Link>
-                    </Button>
-                    <Button as-child size="sm">
-                        <Link href="/register">Start writing</Link>
-                    </Button>
+                    <Link
+                        href="/register"
+                        class="rounded-none border border-white/20 bg-white/5 px-5 py-2 text-xs font-medium tracking-wide text-white/80 backdrop-blur-sm transition-all duration-200 hover:border-white/40 hover:bg-white/10 hover:text-white"
+                    >
+                        Comenzar a escribir →
+                    </Link>
                 </div>
             </div>
         </header>
@@ -188,7 +196,7 @@ const initials = props.profile_user.name
         <footer class="mt-16 border-t border-border py-8 text-center text-sm text-muted-foreground">
             <p>
                 Powered by
-                <Link href="/" class="font-medium text-foreground hover:underline">Escribe.io</Link>
+                <Link href="/" class="font-medium text-foreground hover:underline">Write.io</Link>
                 · Write your story
             </p>
         </footer>
