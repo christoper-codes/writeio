@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { Head, Link } from '@inertiajs/vue3';
 import { BookOpen, Calendar, ChevronRight, Hash, User } from 'lucide-vue-next';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import type { Blog, PublicUser, Topic } from '@/types';
 import AppLogoIcon from '@/components/AppLogoIcon.vue';
+import ThemeToggle from '@/components/ThemeToggle.vue';
+import { Badge } from '@/components/ui/badge';
+import type { Blog, PublicUser, Topic } from '@/types';
 
 const props = defineProps<{
     profile_user: PublicUser;
@@ -43,8 +43,9 @@ const initials = props.profile_user.name
                     </div>
                 </Link>
                 <div class="flex items-center gap-3">
+                    <ThemeToggle />
                     <Link
-                        href="/register"
+                        href="/blogs"
                         class="rounded-none border border-white/20 bg-white/5 px-5 py-2 text-xs font-medium tracking-wide text-white/80 backdrop-blur-sm transition-all duration-200 hover:border-white/40 hover:bg-white/10 hover:text-white"
                     >
                         Comenzar a escribir →

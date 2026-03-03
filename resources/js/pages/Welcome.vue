@@ -93,7 +93,7 @@ withDefaults(
             <div class="mt-12 flex flex-col items-center gap-3 sm:flex-row">
                 <Link
                     v-if="canRegister"
-                    :href="register()"
+                    href="/blogs"
                     class="group bg-linear-to-r from-blue-400 to-blue-600 relative inline-flex h-12 min-w-[168px] items-center justify-center overflow-hidden rounded-none px-8 text-sm font-medium text-white transition-all duration-300"
                 >
                     <span class="relative z-10 tracking-wide">Comenzar a escribir</span>
