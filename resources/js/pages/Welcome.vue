@@ -78,7 +78,7 @@ withDefaults(
 
             <!-- Headline -->
             <h1 class="mx-auto max-w-4xl text-[clamp(3rem,7vw,6.5rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-white">
-                Esrcibe sin<br />
+                Escribe sin<br />
                 <span class="bg-clip-text text-transparent bg-linear-to-r from-white to-blue-500">
                     límites
                 </span>
