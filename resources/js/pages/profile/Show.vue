@@ -38,7 +38,7 @@ const initials = props.profile_user.name
                             <AppLogoIcon class="size-6" />
                         </div>
                         <span class="text-sm font-medium tracking-[0.15em] text-white/90">
-                            WRITE.io
+                            Write.io
                         </span>
                     </div>
                 </Link>

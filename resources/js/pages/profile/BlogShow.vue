@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import type { Blog, PublicUser } from '@/types';
 import AppLogoIcon from '@/components/AppLogoIcon.vue';
+import ThemeToggle from '@/components/ThemeToggle.vue';
 
 const props = defineProps<{
     profile_user: PublicUser;
@@ -44,16 +45,19 @@ const initials = props.profile_user.name
                         Back
                     </Link>
                 </Button>
-                <Link href="/">
-                   <div class="flex items-center gap-2">
-                        <div class="flex items-center justify-center">
-                            <AppLogoIcon class="size-6" />
+                <div class="flex items-center gap-3">
+                    <ThemeToggle />
+                    <Link href="/">
+                        <div class="flex items-center gap-2">
+                                <div class="flex items-center justify-center">
+                                    <AppLogoIcon class="size-6" />
+                                </div>
+                                <span class="text-sm font-medium tracking-[0.15em] text-white/90">
+                                    Write.io
+                                </span>
                         </div>
-                        <span class="text-sm font-medium tracking-[0.15em] text-white/90">
-                            WRITE.io
-                        </span>
-                    </div>
-                </Link>
+                    </Link>
+                </div>
             </div>
         </header>
 

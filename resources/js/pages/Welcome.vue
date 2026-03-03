@@ -33,7 +33,7 @@ withDefaults(
                     <AppLogoIcon class="size-8" />
                 </div>
                 <span class="text-sm font-medium tracking-[0.15em] text-white/90">
-                    WRITE.io
+                    Write.io
                 </span>
             </div>
 
