@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Head, Link } from '@inertiajs/vue3';
 import { login, register } from '@/routes';
+import AppLogoIcon from '@/components/AppLogoIcon.vue';
 
 withDefaults(
     defineProps<{
@@ -27,9 +28,15 @@ withDefaults(
 
         <!-- Nav -->
         <header class="relative z-10 flex items-center justify-between px-8 py-7 md:px-14">
-            <span class="text-sm font-medium tracking-[0.15em] text-white/90 uppercase">
-                Escribe
-            </span>
+            <div class="flex items-center gap-2">
+                 <div class="flex items-center justify-center">
+                    <AppLogoIcon class="size-8" />
+                </div>
+                <span class="text-sm font-medium tracking-[0.15em] text-white/90">
+                    WRITE.io
+                </span>
+            </div>
+
 
             <nav class="flex items-center gap-2">
                 <template v-if="$page.props.auth.user">
@@ -37,7 +44,7 @@ withDefaults(
                         href="/blogs"
                         class="rounded-none border border-white/20 bg-white/5 px-5 py-2 text-xs font-medium tracking-wide text-white/80 backdrop-blur-sm transition-all duration-200 hover:border-white/40 hover:bg-white/10 hover:text-white"
                     >
-                        My Blogs →
+                        Mis Blogs →
                     </Link>
                 </template>
                 <template v-else>
@@ -45,14 +52,14 @@ withDefaults(
                         :href="login()"
                         class="px-4 py-2 text-xs font-medium tracking-wide text-white/50 transition-colors duration-200 hover:text-white/80"
                     >
-                        Sign in
+                        Iniciar sesión
                     </Link>
                     <Link
                         v-if="canRegister"
                         :href="register()"
                         class="rounded-none border border-white/20 bg-white/5 px-5 py-2 text-xs font-medium tracking-wide text-white/80 backdrop-blur-sm transition-all duration-200 hover:border-white/40 hover:bg-white/10 hover:text-white"
                     >
-                        Get started →
+                        Comenzar →
                     </Link>
                 </template>
             </nav>
@@ -89,13 +96,13 @@ withDefaults(
                     :href="register()"
                     class="group bg-linear-to-r from-blue-400 to-blue-600 relative inline-flex h-12 min-w-[168px] items-center justify-center overflow-hidden rounded-none px-8 text-sm font-medium text-white transition-all duration-300"
                 >
-                    <span class="relative z-10 tracking-wide">Start writing</span>
+                    <span class="relative z-10 tracking-wide">Comenzar a escribir</span>
                 </Link>
                 <Link
                     :href="login()"
                     class="inline-flex h-12 min-w-[168px] items-center justify-center rounded-none border border-white/10 bg-white/5 px-8 text-sm font-medium tracking-wide text-white/60 backdrop-blur-sm transition-all duration-200 hover:border-white/20 hover:bg-white/10 hover:text-white/90"
                 >
-                    Sign in
+                    Iniciar sesión
                 </Link>
             </div>
 
