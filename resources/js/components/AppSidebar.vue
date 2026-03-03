@@ -53,7 +53,7 @@ const footerNavItems: NavItem[] = user?.username
             <SidebarMenu>
                 <SidebarMenuItem>
                     <SidebarMenuButton size="lg" as-child>
-                        <Link href="/blogs">
+                        <Link href="/">
                             <AppLogo />
                         </Link>
                     </SidebarMenuButton>
