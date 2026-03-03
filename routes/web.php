@@ -14,10 +14,6 @@ Route::get('/', function () {
     ]);
 })->name('home');
 
-Route::get('dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 // Blogs
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('blogs', [BlogController::class, 'index'])->name('blogs.index');

@@ -15,17 +15,10 @@ import {
 } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import AppLogo from './AppLogo.vue';
-import { dashboard } from '@/routes';
-
 const page = usePage();
 const user = page.props.auth.user as { username?: string } | undefined;
 
 const mainNavItems: NavItem[] = [
-    {
-        title: 'Dashboard',
-        href: dashboard(),
-        icon: LayoutGrid,
-    },
     {
         title: 'My Blogs',
         href: '/blogs',
@@ -60,7 +53,7 @@ const footerNavItems: NavItem[] = user?.username
             <SidebarMenu>
                 <SidebarMenuItem>
                     <SidebarMenuButton size="lg" as-child>
-                        <Link :href="dashboard()">
+                        <Link href="/blogs">
                             <AppLogo />
                         </Link>
                     </SidebarMenuButton>
