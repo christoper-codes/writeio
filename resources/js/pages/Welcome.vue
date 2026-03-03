@@ -94,13 +94,13 @@ withDefaults(
                 <Link
                     v-if="canRegister"
                     href="/blogs"
-                    class="group bg-linear-to-r from-blue-400 to-blue-600 relative inline-flex h-12 min-w-[168px] items-center justify-center overflow-hidden rounded-none px-8 text-sm font-medium text-white transition-all duration-300"
+                    class="group bg-linear-to-r from-blue-400 to-blue-600 relative inline-flex lg:min-w-[220px] h-12 w-full items-center justify-center overflow-hidden rounded-none px-8 text-sm font-medium text-white transition-all duration-300"
                 >
-                    <span class="relative z-10 tracking-wide">Comenzar a escribir</span>
+                    <span class="relative z-10 tracking-wide">Comenzar a escribir →</span>
                 </Link>
                 <Link
                     :href="login()"
-                    class="inline-flex h-12 min-w-[168px] items-center justify-center rounded-none border border-white/10 bg-white/5 px-8 text-sm font-medium tracking-wide text-white/60 backdrop-blur-sm transition-all duration-200 hover:border-white/20 hover:bg-white/10 hover:text-white/90"
+                    class="inline-flex h-12 w-full items-center justify-center rounded-none border border-white/10 bg-white/5 px-8 text-sm font-medium tracking-wide text-white/60 backdrop-blur-sm transition-all duration-200 hover:border-white/20 hover:bg-white/10 hover:text-white/90"
                 >
                     Iniciar sesión
                 </Link>
