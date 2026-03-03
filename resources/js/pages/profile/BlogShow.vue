@@ -50,9 +50,9 @@ const initials = props.profile_user.name
                     <Link href="/">
                         <div class="flex items-center gap-2">
                                 <div class="flex items-center justify-center">
-                                    <AppLogoIcon class="size-6" />
+                                    <AppLogoIcon class="size-7" />
                                 </div>
-                                <span class="text-sm font-medium tracking-[0.15em] text-white/90">
+                                <span class="hidden lg:block text-sm font-medium tracking-[0.15em]">
                                     Write.io
                                 </span>
                         </div>

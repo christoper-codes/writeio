@@ -12,7 +12,9 @@ function toggle() {
 <template>
     <button
         @click="toggle"
-        class="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/60 backdrop-blur-sm transition-all duration-200 hover:border-white/25 hover:bg-white/10 hover:text-white/90"
+        class="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-accent/60 text-accent-foreground/60 backdrop-blur-sm transition-all duration-200
+        hover:border-accent hover:bg-accent/80 hover:text-accent-foreground
+        dark:border-white/10 dark:bg-white/5 dark:text-white/60 dark:hover:border-white/25 dark:hover:bg-white/10 dark:hover:text-white/90"
         :aria-label="resolvedAppearance === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
     >
         <Sun v-if="resolvedAppearance === 'dark'" class="h-4 w-4" />

@@ -35,9 +35,9 @@ const initials = props.profile_user.name
                 <Link href="/">
                    <div class="flex items-center gap-2">
                         <div class="flex items-center justify-center">
-                            <AppLogoIcon class="size-6" />
+                            <AppLogoIcon class="size-7" />
                         </div>
-                        <span class="text-sm font-medium tracking-[0.15em] text-white/90">
+                        <span class="hidden lg:block text-sm font-medium tracking-[0.15em]">
                             Write.io
                         </span>
                     </div>
@@ -46,7 +46,9 @@ const initials = props.profile_user.name
                     <ThemeToggle />
                     <Link
                         href="/blogs"
-                        class="rounded-none border border-white/20 bg-white/5 px-5 py-2 text-xs font-medium tracking-wide text-white/80 backdrop-blur-sm transition-all duration-200 hover:border-white/40 hover:bg-white/10 hover:text-white"
+                        class="rounded-none border border-border bg-accent/60 px-5 py-2 text-xs font-medium tracking-wide backdrop-blur-sm transition-all duration-200
+                        hover:border-accent hover:bg-accent/80 hover:text-accent-foreground
+                        dark:border-white/20 dark:bg-white/5 dark:hover:border-white/40 dark:hover:bg-white/10 dark:hover:text-white"
                     >
                         Comenzar a escribir →
                     </Link>
