@@ -17,6 +17,8 @@ trait ProfileValidationRules
         return [
             'name' => $this->nameRules(),
             'email' => $this->emailRules($userId),
+            'username' => $this->usernameRules($userId),
+            'bio' => ['nullable', 'string', 'max:280'],
         ];
     }
 
@@ -35,6 +37,19 @@ trait ProfileValidationRules
      *
      * @return array<int, \Illuminate\Contracts\Validation\Rule|array<mixed>|string>
      */
+    protected function usernameRules(?int $userId = null): array
+    {
+        return [
+            'nullable',
+            'string',
+            'max:30',
+            'regex:/^[a-zA-Z0-9_]+$/',
+            $userId === null
+                ? Rule::unique(User::class, 'username')
+                : Rule::unique(User::class, 'username')->ignore($userId),
+        ];
+    }
+
     protected function emailRules(?int $userId = null): array
     {
         return [

@@ -85,10 +85,9 @@ const user = page.props.auth.user;
                             id="bio"
                             class="mt-1 block w-full"
                             name="bio"
-                            :default-value="user.bio"
-                            required
-                            autocomplete="bio"
-                            placeholder="Bio"
+                            :default-value="user.bio ?? ''"
+                            placeholder="Tell the world a bit about yourself..."
+                            :rows="3"
                         />
                         <InputError class="mt-2" :message="errors.bio" />
                     </div>
